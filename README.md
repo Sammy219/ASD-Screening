@@ -7,3 +7,5 @@ dilakukan prediksi dari data tersebut untuk mengetahui apakah anak yang sedang d
 mengalami ASD atau tidak. Pengguna dapat melakukan pengecekan dengan cara mengupload gambar wajah untuk
 diklasifikasikan terkena gejala ASD atau tidak. Aplikasi kami juga akan menyajikan artikel edukasi dan informasi
 seputar autism spectrum disorder yang diharapkan dapat menambah wawasan pembaca.
+
+cc: http://asdtests.com/#
