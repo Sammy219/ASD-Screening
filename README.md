@@ -9,3 +9,7 @@ diklasifikasikan terkena gejala ASD atau tidak. Aplikasi kami juga akan menyajik
 seputar autism spectrum disorder yang diharapkan dapat menambah wawasan pembaca.
 
 cc: http://asdtests.com/#
+
+
+## How to use
+Type "python 3 run.py" on the terminal.
