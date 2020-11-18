@@ -12,4 +12,4 @@ cc: http://asdtests.com/#
 
 
 ## How to use
-Type "python 3 run.py" on the terminal.
+Type "python run.py" on the terminal.
