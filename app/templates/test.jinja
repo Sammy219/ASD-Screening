@@ -7,34 +7,34 @@ Test Page
             <div class="center">
                 <h1>Tes Diagnosa Autisme</h1>
 
-                <form action="result" accept-charset="utf-8">
+                <form action="{{ url_for('site.result') }}" accept-charset="utf-8" method="post">
 
                     <div class="card">
                         <div class="form-check">
                             <h2>1. Apakah anak Anda melihat Anda saat Anda memanggil namanya?</h2>
                             <li>
                                 <label class="radio" for="q1a1">
-                                <input type="radio" id="q1a1" name="q1" value="q1a1" checked="">
+                                <input type="radio" id="q1a1" name="q1" value="1" checked="">
                                 Selalu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q1a2">
-                                <input type="radio" id="q1a2" name="q1" value="q1a2">
+                                <input type="radio" id="q1a2" name="q1" value="2">
                                 Biasanya</label>
                             </li>
                             <li>
                                 <label class="radio" for="q1a3">
-                                <input type="radio" id="q1a3" name="q1" value="q1a3">
+                                <input type="radio" id="q1a3" name="q1" value="3">
                                 Kadang-kadang </label>
                             </li>
                             <li>
                                 <label class="radio" for="q1a4">
-                                <input type="radio" id="q1a4" name="q1" value="q1a4">
+                                <input type="radio" id="q1a4" name="q1" value="4">
                                 Jarang </label>
                             </li>
                             <li>
                                 <label class="radio" for="q1a5">
-                                <input type="radio" id="q1a5" name="q1" value="q1a5">
+                                <input type="radio" id="q1a5" name="q1" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
@@ -44,27 +44,27 @@ Test Page
                             <h2>2. Seberapa mudah Anda melakukan kontak mata dengan anak Anda?</h2>
                             <li>
                                 <label class="radio" for="q2a1">
-                                <input type="radio" id="q2a1" name="q2" value="q2a1" checked="">
+                                <input type="radio" id="q2a1" name="q2" value="1" checked="">
                                 Sangat mudah </label>
                             </li>
                             <li>
                                 <label class="radio" for="q2a2">
-                                <input type="radio" id="q2a2" name="q2" value="q2a2">
+                                <input type="radio" id="q2a2" name="q2" value="2">
                                 Cukup mudah</label>
                             </li>
                             <li>
                                 <label class="radio" for="q2a3">
-                                <input type="radio" id="q2a3" name="q2" value="q2a3">
+                                <input type="radio" id="q2a3" name="q2" value="3">
                                 Cukup sulit </label>
                             </li>
                             <li>
                                 <label class="radio" for="q2a4">
-                                <input type="radio" id="q2a4" name="q2" value="q2a4">
+                                <input type="radio" id="q2a4" name="q2" value="4">
                                 Sangat sulit </label>
                             </li>
                             <li>
                                 <label class="radio" for="q2a5">
-                                <input type="radio" id="q2a5" name="q2" value="q2a5">
+                                <input type="radio" id="q2a5" name="q2" value="5">
                                 Tidak mungkin </label>
                             </li>
                         </div>
@@ -74,27 +74,27 @@ Test Page
                             <h2>3. Seberapa sering anak Anda menunjuk untuk menunjukkan bahwa dia menginginkan sesuatu? (mis. mainan yang di luar jangkauan)</h2>
                             <li>
                                 <label class="radio" for="q3a1">
-                                <input type="radio" id="q1a1" name="q3" value="q3a1" checked="">
+                                <input type="radio" id="q1a1" name="q3" value="1" checked="">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
                                 <label class="radio" for="q3a2">
-                                <input type="radio" id="q1a2" name="q3" value="q3a2">
+                                <input type="radio" id="q1a2" name="q3" value="2">
                                 Beberapa kali sehari</label>
                             </li>
                             <li>
                                 <label class="radio" for="q3a3">
-                                <input type="radio" id="q1a3" name="q3" value="q3a3">
+                                <input type="radio" id="q1a3" name="q3" value="3">
                                 Beberapa kali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q3a4">
-                                <input type="radio" id="q1a4" name="q3" value="q3a4">
+                                <input type="radio" id="q1a4" name="q3" value="4">
                                 Kurang dari sekali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q3a5">
-                                <input type="radio" id="q1a5" name="q3" value="q3a5">
+                                <input type="radio" id="q1a5" name="q3" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
@@ -104,27 +104,27 @@ Test Page
                             <h2>4. Apakah anak Anda menunjukkan minat yang sama dengan Anda? (mis. menunjuk pemandangan yang menarik)</h2>
                             <li>
                                 <label class="radio" for="q4a1">
-                                <input type="radio" id="q1a1" name="q4" value="q4a1" checked="">
+                                <input type="radio" id="q1a1" name="q4" value="1" checked="">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
                                 <label class="radio" for="q4a2">
-                                <input type="radio" id="q1a2" name="q4" value="q4a2">
+                                <input type="radio" id="q1a2" name="q4" value="2">
                                 Beberapa kali sehari</label>
                             </li>
                             <li>
                                 <label class="radio" for="q4a3">
-                                <input type="radio" id="q1a3" name="q4" value="q4a3">
+                                <input type="radio" id="q1a3" name="q4" value="3">
                                 Beberapa kali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q4a4">
-                                <input type="radio" id="q1a4" name="q4" value="q4a4">
+                                <input type="radio" id="q1a4" name="q4" value="4">
                                 Kurang dari sekali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q4a5">
-                                <input type="radio" id="q1a5" name="q4" value="q4a5">
+                                <input type="radio" id="q1a5" name="q4" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
@@ -134,27 +134,27 @@ Test Page
                             <h2>5. Apakah anak Anda berpura-pura? (misalnya merawat boneka, berbicara di telepon mainan)</h2>
                             <li>
                                 <label class="radio" for="q5a1">
-                                <input type="radio" id="q5a1" name="q5" value="q5a1" checked="">
+                                <input type="radio" id="q5a1" name="q5" value="1" checked="">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
                                 <label class="radio" for="q5a2">
-                                <input type="radio" id="q5a2" name="q5" value="q5a2">
+                                <input type="radio" id="q5a2" name="q5" value="2">
                                 Beberapa kali sehari</label>
                             </li>
                             <li>
                                 <label class="radio" for="q5a3">
-                                <input type="radio" id="q5a3" name="q5" value="q5a3">
+                                <input type="radio" id="q5a3" name="q5" value="3">
                                 Beberapa kali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q5a4">
-                                <input type="radio" id="q5a4" name="q5" value="q5a4">
+                                <input type="radio" id="q5a4" name="q5" value="4">
                                 Kurang dari sekali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q5a5">
-                                <input type="radio" id="q5a5" name="q5" value="q5a5">
+                                <input type="radio" id="q5a5" name="q5" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
@@ -164,27 +164,27 @@ Test Page
                             <h2>6. Apakah anak Anda mengikuti apa yang Anda lihat?</h2>
                             <li>
                                 <label class="radio" for="q6a1">
-                                <input type="radio" id="q6a1" name="q6" value="q6a1" checked="">
+                                <input type="radio" id="q6a1" name="q6" value="1" checked="">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
                                 <label class="radio" for="q6a2">
-                                <input type="radio" id="q6a2" name="q6" value="q6a2">
+                                <input type="radio" id="q6a2" name="q6" value="2">
                                 Beberapa kali sehari</label>
                             </li>
                             <li>
                                 <label class="radio" for="q6a3">
-                                <input type="radio" id="q6a3" name="q6" value="q6a3">
+                                <input type="radio" id="q6a3" name="q6" value="3">
                                 Beberapa kali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q6a4">
-                                <input type="radio" id="q6a4" name="q6" value="q6a4">
+                                <input type="radio" id="q6a4" name="q6" value="4">
                                 Kurang dari sekali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q6a5">
-                                <input type="radio" id="q6a5" name="q6" value="q6a5">
+                                <input type="radio" id="q6a5" name="q6" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
@@ -194,27 +194,27 @@ Test Page
                             <h2>7. Jika Anda atau orang lain dalam keluarga terlihat kesal, apakah anak Anda menunjukkan tanda-tanda ingin menghibur mereka? (misalnya membelai rambut, memeluknya)</h2>
                             <li>
                                 <label class="radio" for="q7a1">
-                                <input type="radio" id="q7a1" name="q7" value="q7a1" checked="">
+                                <input type="radio" id="q7a1" name="q7" value="1" checked="">
                                 Selalu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q7a2">
-                                <input type="radio" id="q7a2" name="q7" value="q7a2">
+                                <input type="radio" id="q7a2" name="q7" value="2">
                                 Biasanya</label>
                             </li>
                             <li>
                                 <label class="radio" for="q7a3">
-                                <input type="radio" id="q7a3" name="q7" value="q7a3">
+                                <input type="radio" id="q7a3" name="q7" value="3">
                                 Kadang-kadang </label>
                             </li>
                             <li>
                                 <label class="radio" for="q7a4">
-                                <input type="radio" id="q7a4" name="q7" value="q7a4">
+                                <input type="radio" id="q7a4" name="q7" value="4">
                                 Jarang </label>
                             </li>
                             <li>
                                 <label class="radio" for="q7a5">
-                                <input type="radio" id="q7a5" name="q7" value="q7a5">
+                                <input type="radio" id="q7a5" name="q7" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
@@ -224,27 +224,27 @@ Test Page
                             <h2>8. Maukah Anda menjelaskan kata-kata pertama anak Anda sebagai:</h2>
                             <li>
                                 <label class="radio" for="q8a1">
-                                <input type="radio" id="q8a1" name="q8" value="q8a1" checked="">
+                                <input type="radio" id="q8a1" name="q8" value="1" checked="">
                                 Sangat khas </label>
                             </li>
                             <li>
                                 <label class="radio" for="q8a2">
-                                <input type="radio" id="q8a2" name="q8" value="q8a2">
+                                <input type="radio" id="q8a2" name="q8" value="2">
                                 Cukup khas</label>
                             </li>
                             <li>
                                 <label class="radio" for="q8a3">
-                                <input type="radio" id="q8a3" name="q8" value="q8a3">
+                                <input type="radio" id="q8a3" name="q8" value="3">
                                 Sedikit tidak biasa </label>
                             </li>
                             <li>
                                 <label class="radio" for="q8a4">
-                                <input type="radio" id="q8a4" name="q8" value="q8a4">
+                                <input type="radio" id="q8a4" name="q8" value="4">
                                 Sangat tidak biasa </label>
                             </li>
                             <li>
                                 <label class="radio" for="q8a5">
-                                <input type="radio" id="q8a5" name="q8" value="q8a5">
+                                <input type="radio" id="q8a5" name="q8" value="5">
                                 Anak saya tidak berbicara </label>
                             </li>
                         </div>
@@ -254,27 +254,27 @@ Test Page
                             <h2>9. Apakah anak Anda menggunakan gerakan sederhana? (mis. melambaikan tangan)</h2>
                             <li>
                                 <label class="radio" for="q9a1">
-                                <input type="radio" id="q9a1" name="q9" value="q9a1" checked="">
+                                <input type="radio" id="q9a1" name="q9" value="1" checked="">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
                                 <label class="radio" for="q9a2">
-                                <input type="radio" id="q9a2" name="q9" value="q9a2">
+                                <input type="radio" id="q9a2" name="q9" value="2">
                                 Beberapa kali sehari</label>
                             </li>
                             <li>
                                 <label class="radio" for="q9a3">
-                                <input type="radio" id="q9a3" name="q9" value="q9a3">
+                                <input type="radio" id="q9a3" name="q9" value="3">
                                 Beberapa kali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q9a4">
-                                <input type="radio" id="q9a4" name="q9" value="q9a4">
+                                <input type="radio" id="q9a4" name="q9" value="4">
                                 Kurang dari sekali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q9a5">
-                                <input type="radio" id="q9a5" name="q9" value="q9a5">
+                                <input type="radio" id="q9a5" name="q9" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
@@ -284,27 +284,27 @@ Test Page
                             <h2>10. Apakah anak Anda tidak menatap apa pun (melamun) tanpa ada tujuan yang jelas?</h2>
                             <li>
                                 <label class="radio" for="q10a1">
-                                <input type="radio" id="q10a1" name="q10" value="q10a1" checked="">
+                                <input type="radio" id="q10a1" name="q10" value="1" checked="">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
                                 <label class="radio" for="q10a2">
-                                <input type="radio" id="q10a2" name="q10" value="q10a2">
+                                <input type="radio" id="q10a2" name="q10" value="2">
                                 Beberapa kali sehari</label>
                             </li>
                             <li>
                                 <label class="radio" for="q10a3">
-                                <input type="radio" id="q10a3" name="q10" value="q10a3">
+                                <input type="radio" id="q10a3" name="q10" value="3">
                                 Beberapa kali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q10a4">
-                                <input type="radio" id="q10a4" name="q10" value="q10a4">
+                                <input type="radio" id="q10a4" name="q10" value="4">
                                 Kurang dari sekali seminggu </label>
                             </li>
                             <li>
                                 <label class="radio" for="q10a5">
-                                <input type="radio" id="q10a5" name="q10" value="q10a5">
+                                <input type="radio" id="q10a5" name="q10" value="5">
                                 Tidak pernah </label>
                             </li>
                         </div>
