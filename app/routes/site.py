@@ -9,15 +9,18 @@ site = Blueprint('site', __name__)
 def index():
     return render_template('home.jinja')
 
+@site.route('/test-page')
+def test_page():
+    return render_template('test-page.jinja')
 
 @site.route('/about')
 def about():
     return render_template('about.jinja')
 
 
-@site.route('/test')
-def test():
-    return render_template('test.jinja')
+@site.route('/questionare-test')
+def questionare_test():
+    return render_template('questionare-test.jinja')
 
 
 @site.route('/result', methods=['POST'])

@@ -48,7 +48,7 @@ p {
     color: var(--dark-color);
 
     text-align: center;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .center .card {
@@ -167,4 +167,25 @@ input[type=submit] {
 
     margin-top: 50px;
     margin-bottom: 100px;
+}
+
+
+/* Halaman buat test-page */
+.opsi-test {
+    display: flex;
+}
+.opsi-test .card{
+	background: var(--light-color);
+    box-shadow: 0px 4px 18px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.opsi-test .card p{
+    text-align: justify;
+}
+.opsi-test .card h5{
+    text-align: center;
 }
