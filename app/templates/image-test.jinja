@@ -20,7 +20,7 @@ Image Test Page
                 <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Tambah Foto</button>
                 
                 <div class="image-upload-wrap">
-                    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required="" oninvalid="this.setCustomValidity('Silahkan upload foto')">
+                    <input class="file-upload-input" id="image" name="image" type='file' onchange="readURL(this);" accept="image/*" required="" oninvalid="this.setCustomValidity('Silahkan upload foto')">
                     <div class="drag-text">
                         <h3>Drag dan drop foto<h3>
                         </div>

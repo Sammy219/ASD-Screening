@@ -6,8 +6,52 @@ Questionare Test Page
 {% block content %}
             <div class="center">
                 <h1>Tes Kuesioner Diagnosa Autisme</h1>
-
                 <form action="{{ url_for('site.result') }}" accept-charset="utf-8" method="post">
+
+                    <div class="data-diri">
+                        <div class="card">
+                            {# Jenis Kelamin #}
+                            <div class="form-check">
+                                <h2>Jenis Kelamin</h2>
+                                <li>
+                                    <label class="radio" for="jk1">
+                                    <input type="radio" id="jk1" name="jk" value="1" checked="">
+                                    Laki-laki </label>
+                                </li>
+                                <li>
+                                    <label class="radio" for="jk2">
+                                    <input type="radio" id="jk2" name="jk" value="2">
+                                    Perempuan </label>
+                                </li>
+                            </div>
+                            {# Kelompok Etnik #}
+                            <div class="form-check">
+                                <h2>Kelompok etnik</h2>
+                                <select name="etnik" id="etnik" class="form-select" aria-label="Default select example">
+                                    <option selected>Pilih etnik</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            {# Penyakit Kuning #}
+                            <div class="form-check">
+                                <h2>Penyakit kuning?</h2>
+                                <li>
+                                    <label class="radio" for="pk1">
+                                    <input type="radio" id="pk1" name="pk" value="1" checked="">
+                                    Ya </label>
+                                </li>
+                                <li>
+                                    <label class="radio" for="pk2">
+                                    <input type="radio" id="pk2" name="pk" value="2">
+                                    Tidak </label>
+                                </li>
+                            </div>
+
+
+                        </div>
+                    </div>
 
                     <div class="card">
                         <div class="form-check">

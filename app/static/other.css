@@ -71,13 +71,13 @@ p {
     color: var(--text-color);
 }
 
-.card li {
+/* .card li {
 	display: block;
     position: relative;
     font-size: 14px;
     padding-top: 15px;
     
-}
+} */
 
 .card h2 {
     font-family: "Roboto", sans-serif;
@@ -188,4 +188,33 @@ input[type=submit] {
 }
 .opsi-test .card h5{
     text-align: center;
+}
+
+
+/* Data Diri */
+.data-diri {
+    display: flex;
+}
+
+.data-diri .card div {
+	list-style-type: none;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+}
+
+.data-diri .card li {
+	display: flex;
+    position: relative;
+    font-size: 14px;
+    /* padding-top: 15px; */
+    
+}
+
+.data-diri .card h2 {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+	font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
 }
