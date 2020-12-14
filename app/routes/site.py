@@ -22,6 +22,9 @@ def about():
 def questionare_test():
     return render_template('questionare-test.jinja')
 
+@site.route('/image-test')
+def image_test():
+    return render_template('image-test.jinja')
 
 @site.route('/result', methods=['POST'])
 def result():
