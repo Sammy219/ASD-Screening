@@ -71,13 +71,13 @@ p {
     color: var(--text-color);
 }
 
-/* .card li {
+.card li {
 	display: block;
     position: relative;
     font-size: 14px;
     padding-top: 15px;
     
-} */
+}
 
 .card h2 {
     font-family: "Roboto", sans-serif;
@@ -194,27 +194,39 @@ input[type=submit] {
 /* Data Diri */
 .data-diri {
     display: flex;
+    position: relative;
+    justify-content: center;
 }
 
-.data-diri .card div {
-	list-style-type: none;
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    color: var(--text-color);
-}
-
-.data-diri .card li {
+.data-diri .flex {
 	display: flex;
     position: relative;
-    font-size: 14px;
-    /* padding-top: 15px; */
-    
 }
 
-.data-diri .card h2 {
-    font-family: "Roboto", sans-serif;
-    color: var(--text-color);
-	font-weight: bold;
+.data-diri li {
+    padding-right: 15px;
+    padding-top: 0px;
+    /* padding-bottom: 15px; */
+}
+
+.data-diri h2 {
     font-size: 16px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.center h3 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 59px;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.center h3 {
+    animation: fadeIn 1000ms forwards cubic-bezier(0.22, 0.32, 0, 1.54);
+    opacity: 0;
+    animation-delay: 1600ms;
 }
