@@ -12,5 +12,5 @@ cc: http://asdtests.com/#
 
 
 ## How to use
-##### Type "python run.py" on the terminal 
-##### or use PyCharm to run.py
+##### Type "flask run" on the terminal 
+##### or use PyCharm
