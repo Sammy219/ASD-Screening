@@ -112,7 +112,7 @@ p {
     }
 }
 
-.hero-container h1 {
+.hero-container h1, h2{
     animation: fadeToDown 800ms forwards cubic-bezier(0.22, 0.32, 0, 1.54);
     opacity: 0;
     animation-delay: 800ms;

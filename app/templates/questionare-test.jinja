@@ -17,12 +17,12 @@ Questionare Test Page
                                     <div class="flex">
                                         <li>
                                             <label class="radio" for="jk1">
-                                            <input type="radio" id="jk1" name="jk" value="1" checked="">
+                                            <input type="radio" id="jk1" name="sex" value="1">
                                             Laki-laki </label>
                                         </li>
                                         <li>
                                             <label class="radio" for="jk2">
-                                            <input type="radio" id="jk2" name="jk" value="2">
+                                            <input type="radio" id="jk2" name="sex" value="0">
                                             Perempuan </label>
                                         </li>
                                     </div>
@@ -30,11 +30,15 @@ Questionare Test Page
                                 {# Kelompok Etnik #}
                                 <div class="form-check">
                                     <h2>Kelompok etnik</h2>
+<<<<<<< Updated upstream
                                     <select name="etnik" id="etnik" class="form-select" aria-label="Default select example" required>
+=======
+                                    <select name="ethnicity" id="ethnicity" class="form-select" aria-label="Default select example">
+>>>>>>> Stashed changes
                                         <option value="">Pilih kelompok etnik</option>
-                                        <option value="1">Hispanic</option>
-                                        <option value="2">Latino</option>
-                                        <option value="3">Native indian</option>
+                                        <option value="0">Hispanic</option>
+                                        <option value="1">Latino</option>
+                                        <option value="2">Native indian</option>
                                         <option value="4">Pacifica</option>
                                         <option value="5">White european</option>
                                         <option value="6">Asian</option>
@@ -42,7 +46,7 @@ Questionare Test Page
                                         <option value="8">Middle eastern</option>
                                         <option value="9">Mixed</option>
                                         <option value="10">South asian</option>
-                                        <option value="11">Lainnya</option>
+                                        <option value="3">Lainnya</option>
                                     </select>
                                 </div>
                                 {# Penyakit Kuning #}
@@ -51,12 +55,12 @@ Questionare Test Page
                                     <div class="flex">
                                         <li>
                                             <label class="radio" for="pk1">
-                                            <input type="radio" id="pk1" name="pk" value="1" checked="">
+                                            <input type="radio" id="pk1" name="jaundice" value="1">
                                             Pernah</label>
                                         </li>
                                         <li>
                                             <label class="radio" for="pk2">
-                                            <input type="radio" id="pk2" name="pk" value="2">
+                                            <input type="radio" id="pk2" name="jaundice" value="0">
                                             Tidak pernah </label>
                                         </li>
                                     </div>
@@ -69,12 +73,12 @@ Questionare Test Page
                                     <div class="flex">
                                         <li>
                                             <label class="radio" for="asd1">
-                                            <input type="radio" id="asd1" name="asd" value="1" checked="">
+                                            <input type="radio" id="asd1" name="family_mem_with_asd" value="1">
                                             Ya </label>
                                         </li>
                                         <li>
                                             <label class="radio" for="asd2">
-                                            <input type="radio" id="asd2" name="asd" value="2">
+                                            <input type="radio" id="asd2" name="family_mem_with_asd" value="0">
                                             Tidak </label>
                                         </li>
                                     </div>
@@ -84,10 +88,10 @@ Questionare Test Page
                                     <h2>Assigner</h2>
                                     <select name="assigner" id="assigner" class="form-select" aria-label="Default select example" required>
                                         <option value="">Pilih assigner</option>
-                                        <option value="1">Family member</option>
-                                        <option value="2">Health care professional</option>
-                                        <option value="3">Lainnya</option>
-                                        <option value="4">Diri sendiri</option>
+                                        <option value="0">Family member</option>
+                                        <option value="1">Health care professional</option>
+                                        <option value="2">Lainnya</option>
+                                        <option value="3">Diri sendiri</option>
                                     </select>
                                 </div>
                                 {# Penyakit Kuning #}
@@ -96,17 +100,17 @@ Questionare Test Page
                                     <div class="flex">
                                         <li>
                                             <label class="radio" for="umur1">
-                                            <input type="radio" id="umur1" name="umur" value="1" checked="">
+                                            <input type="radio" id="age0" name="age" value="0">
                                             0-12</label>
                                         </li>
                                         <li>
                                             <label class="radio" for="umur2">
-                                            <input type="radio" id="umur2" name="umur" value="2">
+                                            <input type="radio" id="age1" name="age" value="1">
                                             13-23 </label>
                                         </li>
                                         <li>
                                             <label class="radio" for="umur3">
-                                            <input type="radio" id="umur3" name="umur" value="3">
+                                            <input type="radio" id="age2" name="age" value="2">
                                             24-36 </label>
                                         </li>
                                     </div>
@@ -124,7 +128,7 @@ Questionare Test Page
                             <h2>1. Apakah anak Anda melihat Anda saat Anda memanggil namanya?</h2>
                             <li>
                                 <label class="radio" for="q1a1">
-                                <input type="radio" id="q1a1" name="q1" value="1" checked="">
+                                <input type="radio" id="q1a1" name="q1" value="1">
                                 Selalu </label>
                             </li>
                             <li>
@@ -154,7 +158,7 @@ Questionare Test Page
                             <h2>2. Seberapa mudah Anda melakukan kontak mata dengan anak Anda?</h2>
                             <li>
                                 <label class="radio" for="q2a1">
-                                <input type="radio" id="q2a1" name="q2" value="1" checked="">
+                                <input type="radio" id="q2a1" name="q2" value="1">
                                 Sangat mudah </label>
                             </li>
                             <li>
@@ -184,7 +188,7 @@ Questionare Test Page
                             <h2>3. Seberapa sering anak Anda menunjuk untuk menunjukkan bahwa dia menginginkan sesuatu? (mis. mainan yang di luar jangkauan)</h2>
                             <li>
                                 <label class="radio" for="q3a1">
-                                <input type="radio" id="q1a1" name="q3" value="1" checked="">
+                                <input type="radio" id="q1a1" name="q3" value="1">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
@@ -214,7 +218,7 @@ Questionare Test Page
                             <h2>4. Apakah anak Anda menunjukkan minat yang sama dengan Anda? (mis. menunjuk pemandangan yang menarik)</h2>
                             <li>
                                 <label class="radio" for="q4a1">
-                                <input type="radio" id="q1a1" name="q4" value="1" checked="">
+                                <input type="radio" id="q1a1" name="q4" value="1">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
@@ -244,7 +248,7 @@ Questionare Test Page
                             <h2>5. Apakah anak Anda berpura-pura? (misalnya merawat boneka, berbicara di telepon mainan)</h2>
                             <li>
                                 <label class="radio" for="q5a1">
-                                <input type="radio" id="q5a1" name="q5" value="1" checked="">
+                                <input type="radio" id="q5a1" name="q5" value="1">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
@@ -274,7 +278,7 @@ Questionare Test Page
                             <h2>6. Apakah anak Anda mengikuti apa yang Anda lihat?</h2>
                             <li>
                                 <label class="radio" for="q6a1">
-                                <input type="radio" id="q6a1" name="q6" value="1" checked="">
+                                <input type="radio" id="q6a1" name="q6" value="1">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
@@ -304,7 +308,7 @@ Questionare Test Page
                             <h2>7. Jika Anda atau orang lain dalam keluarga terlihat kesal, apakah anak Anda menunjukkan tanda-tanda ingin menghibur mereka? (misalnya membelai rambut, memeluknya)</h2>
                             <li>
                                 <label class="radio" for="q7a1">
-                                <input type="radio" id="q7a1" name="q7" value="1" checked="">
+                                <input type="radio" id="q7a1" name="q7" value="1">
                                 Selalu </label>
                             </li>
                             <li>
@@ -334,7 +338,7 @@ Questionare Test Page
                             <h2>8. Maukah Anda menjelaskan kata-kata pertama anak Anda sebagai:</h2>
                             <li>
                                 <label class="radio" for="q8a1">
-                                <input type="radio" id="q8a1" name="q8" value="1" checked="">
+                                <input type="radio" id="q8a1" name="q8" value="1">
                                 Sangat khas </label>
                             </li>
                             <li>
@@ -364,7 +368,7 @@ Questionare Test Page
                             <h2>9. Apakah anak Anda menggunakan gerakan sederhana? (mis. melambaikan tangan)</h2>
                             <li>
                                 <label class="radio" for="q9a1">
-                                <input type="radio" id="q9a1" name="q9" value="1" checked="">
+                                <input type="radio" id="q9a1" name="q9" value="1">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
@@ -394,7 +398,7 @@ Questionare Test Page
                             <h2>10. Apakah anak Anda tidak menatap apa pun (melamun) tanpa ada tujuan yang jelas?</h2>
                             <li>
                                 <label class="radio" for="q10a1">
-                                <input type="radio" id="q10a1" name="q10" value="1" checked="">
+                                <input type="radio" id="q10a1" name="q10" value="1">
                                 Berkali-kali sehari </label>
                             </li>
                             <li>
