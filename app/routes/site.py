@@ -109,18 +109,19 @@ def result():
         test_data = preprocess_data(form_data)
         print(f'test data = {test_data}')
         asd_model = pickle.load(open('asd_model/pkl_model.pkl', 'rb'))
-        test_result = asd_model.predict([test_data])[0]
-        print(f'ASD RESULT: {test_result}')
+        prob = asd_model.predict_proba([test_data])
+        class_pred = np.argmax(prob)
+        print(f"PROBABILITY: {prob}")
 
-        return render_template('result.jinja', test_result=test_result)
+        return render_template('result.jinja', class_pred=class_pred, confidence=prob[class_pred]*100)
     else:
         file = request.files["image"]
         upload_image_path = f"{UPLOAD_FOLDER}/{file.filename}"
         print(upload_image_path)
         file.save(upload_image_path)
-        result = predict_image(upload_image_path)
+        class_pred, conf = predict_image(upload_image_path)
 
-        return render_template('result.jinja', test_result=result)
+        return render_template('result.jinja', class_pred=class_pred, confidence=conf*100)
 
 
 def preprocess_data(data):
@@ -169,5 +170,5 @@ def predict_image(path_to_image):
     print(f"Image prediction: {result}")
     answer = np.argmax(result)
     print(f"Answer: {answer}")
-    return answer
+    return answer, result[answer]
 

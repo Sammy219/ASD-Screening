@@ -9,11 +9,11 @@ Hasil
 <div class="center">
     <div class="hasil">
         <h1>Hasil Tes</h1>
-        {% if test_result == 1 %}
-            <h1 style="color:red">Anak anda menujukkan gejala autis<h1>
+        {% if class_pred == 1 %}
+            <h1 style="color:red">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% mengalami Autism Spectrum Disorder<h1>
             <h2>Kunjungi dokter Anda untuk diagnosis dan tindakan lebih lanjut</h2>
         {% else %}
-            <h1 style="color:green">Anak Anda tidak menunjukkan gejala autis<h1>
+            <h1 style="color:green">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% tidak mengalami Autism Spectrum Disorder<h1>
         {% endif %}
         <p class="testlagi"><a href="{{ url_for('site.test_page') }}" class="btn">Tes Lagi</a></p>
     </div>
