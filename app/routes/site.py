@@ -6,6 +6,71 @@ import pickle
 
 site = Blueprint('site', __name__)
 UPLOAD_FOLDER = 'app/uploads'
+QUESTIONS = [
+    [{'id': 'q1', 'txt': 'Apakah anak Anda melihat Anda saat Anda memanggil namanya?'},
+     {'id': 'q1a1', 'txt': 'Selalu'},
+     {'id': 'q1a2', 'txt': 'Biasanya'},
+     {'id': 'q1a3', 'txt': 'Kadang-kadang'},
+     {'id': 'q1a4', 'txt': 'Jarang'},
+     {'id': 'q1a5', 'txt': 'Tidak pernah'}],
+    [{'id': 'q2', 'txt': 'Seberapa mudah Anda melakukan kontak mata dengan anak Anda?'},
+     {'id': 'q2a1', 'txt': 'Sangat mudah'},
+     {'id': 'q2a2', 'txt': 'Cukup mudah'},
+     {'id': 'q2a3', 'txt': 'Cukup sulit'},
+     {'id': 'q2a4', 'txt': 'Sangat sulit'},
+     {'id': 'q2a5', 'txt': 'Tidak mungkin'}],
+    [{'id': 'q3', 'txt': 'Seberapa sering anak Anda menunjuk untuk menunjukkan bahwa dia menginginkan sesuatu? (mis. '
+                         'mainan yang di luar jangkauan)'},
+     {'id': 'q3a1', 'txt': 'Berkali-kali sehari'},
+     {'id': 'q3a2', 'txt': 'Beberapa kali sehari'},
+     {'id': 'q3a3', 'txt': 'Beberapa kali seminggu'},
+     {'id': 'q3a4', 'txt': 'Kurang dari sekali seminggu'},
+     {'id': 'q3a5', 'txt': 'Tidak pernah'}],
+    [{'id': 'q4', 'txt': 'Apakah anak Anda menunjukkan minat yang sama dengan Anda? (mis. menunjuk pemandangan yang '
+                         'menarik)'},
+     {'id': 'q4a1', 'txt': 'Berkali-kali sehari'},
+     {'id': 'q4a2', 'txt': 'Beberapa kali sehari'},
+     {'id': 'q4a3', 'txt': 'Beberapa kali seminggu'},
+     {'id': 'q4a4', 'txt': 'Kurang dari sekali seminggu'},
+     {'id': 'q4a5', 'txt': 'Tidak pernah'}],
+    [{'id': 'q5', 'txt': 'Apakah anak Anda berpura-pura? (misalnya merawat boneka, berbicara di telepon mainan)'},
+     {'id': 'q5a1', 'txt': 'Berkali-kali sehari'},
+     {'id': 'q5a2', 'txt': 'Beberapa kali sehari'},
+     {'id': 'q5a3', 'txt': 'Beberapa kali seminggu'},
+     {'id': 'q5a4', 'txt': 'Kurang dari sekali seminggu'},
+     {'id': 'q5a5', 'txt': 'Tidak pernah'}],
+    [{'id': 'q6', 'txt': 'Apakah anak Anda mengikuti apa yang Anda lihat?'},
+     {'id': 'q6a1', 'txt': 'Berkali-kali sehari'},
+     {'id': 'q6a2', 'txt': 'Beberapa kali sehari'},
+     {'id': 'q6a3', 'txt': 'Beberapa kali seminggu'},
+     {'id': 'q6a4', 'txt': 'Kurang dari sekali seminggu'},
+     {'id': 'q6a5', 'txt': 'Tidak pernah'}],
+    [{'id': 'q7', 'txt': 'Jika Anda atau orang lain dalam keluarga terlihat kesal, apakah anak Anda menunjukkan '
+                         'tanda-tanda ingin menghibur mereka? (misalnya membelai rambut, memeluknya)'},
+     {'id': 'q7a1', 'txt': 'Selalu'},
+     {'id': 'q7a2', 'txt': 'Biasanya'},
+     {'id': 'q7a3', 'txt': 'Kadang-kadang'},
+     {'id': 'q7a4', 'txt': 'Jarang'},
+     {'id': 'q7a5', 'txt': 'Tidak pernah'}],
+    [{'id': 'q8', 'txt': 'Maukah Anda menjelaskan kata-kata pertama anak Anda sebagai'},
+     {'id': 'q8a1', 'txt': 'Sangat khas'},
+     {'id': 'q8a2', 'txt': 'Cukup khas'},
+     {'id': 'q8a3', 'txt': 'Sedikit tidak biasa'},
+     {'id': 'q8a4', 'txt': 'Sangat tidak biasa'},
+     {'id': 'q8a5', 'txt': 'Anak saya tidak berbicara'}],
+    [{'id': 'q9', 'txt': 'Apakah anak Anda menggunakan gerakan sederhana? (mis. melambaikan tangan)'},
+     {'id': 'q9a1', 'txt': 'Berkali-kali sehari'},
+     {'id': 'q9a2', 'txt': 'Beberapa kali sehari'},
+     {'id': 'q9a3', 'txt': 'Beberapa kali seminggu'},
+     {'id': 'q9a4', 'txt': 'Kurang dari sekali seminggu'},
+     {'id': 'q9a5', 'txt': 'Tidak pernah'}],
+    [{'id': 'q10', 'txt': 'Apakah anak Anda tidak menatap apa pun (melamun) tanpa ada tujuan yang jelas?'},
+     {'id': 'q10a1', 'txt': 'Berkali-kali sehari'},
+     {'id': 'q10a2', 'txt': 'Beberapa kali sehari'},
+     {'id': 'q10a3', 'txt': 'Beberapa kali seminggu'},
+     {'id': 'q10a4', 'txt': 'Kurang dari sekali seminggu'},
+     {'id': 'q10a5', 'txt': 'Tidak pernah'}],
+]
 
 
 @site.route('/')
@@ -25,7 +90,7 @@ def about():
 
 @site.route('/questionare-test')
 def questionare_test():
-    return render_template('questionare-test.jinja')
+    return render_template('questionare-test.jinja', questions=QUESTIONS)
 
 
 @site.route('/image-test')
