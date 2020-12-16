@@ -22,7 +22,7 @@ p {
 }
 
 .about p {
-    font-size: 30px;
+    font-size: 16px;
     font-weight: medium;
 }
 
@@ -239,4 +239,14 @@ input[type=submit] {
     font-weight: bold;
     transition: background-color 400ms;
     display: inline-block;
+}
+
+.gambar-asd {
+    text-align: center;
+    display: block;
+    margin-bottom: 50px;
+
+    animation: fadeToTop 1000ms forwards;
+    opacity: 0;
+    animation-delay: 1700ms;
 }
