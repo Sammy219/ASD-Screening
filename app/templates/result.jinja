@@ -9,13 +9,48 @@ Hasil
 <div class="center">
     <div class="hasil">
         <h1>Hasil Tes</h1>
+
+        <div class="card">
+            {# <div class="data"> #}
+                <h3>Data Diri</h3>
+                <div class="form-check">
+                    <h2>Nama</h2>
+                    <h2 class="atas">Jenis Kelamin</h2>
+                    {# Kelompok Etnik #}
+                    <h2>Kelompok etnik</h2>
+                    {# Penyakit Kuning #}
+                    <h2>Pernah terkena penyakit kuning?</h2>
+                    {# Ada keluarga dengan ASD? #}
+                    <h2 class="atas">Ada keluarga dengan ASD?</h2>
+                    {# Kelompok assigner #}
+                    <h2>Assigner</h2>
+                    {# Penyakit Kuning #}
+                    <h2>Umur (bulan)</h2>
+                </div>
+
+                <h3>Kuesioner</h3>
+                <div class="form-check">
+                    <h2>Apakah anak Anda melihat Anda saat Anda memanggil namanya?</h2>
+                    Selalu
+                    <h2>Seberapa mudah Anda melakukan kontak mata dengan anak Anda?</h2>
+                    Sangat mudah
+                    <h2>Seberapa sering anak Anda menunjuk untuk menunjukkan bahwa dia menginginkan sesuatu? (mis.mainan yang di luar jangkauan)</h2>
+                    Berkali-kali sehari
+                </div>
+        </div>
+
+
         {% if class_pred == 1 %}
             <h1 style="color:red">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% mengalami Autism Spectrum Disorder<h1>
             <h2>Kunjungi dokter Anda untuk diagnosis dan tindakan lebih lanjut</h2>
         {% else %}
             <h1 style="color:green">Anak Anda memiliki kemungkinan {{ '%0.2f'| format(confidence|float) }}% tidak mengalami Autism Spectrum Disorder<h1>
         {% endif %}
-        <p class="testlagi"><a href="{{ url_for('site.test_page') }}" class="btn">Tes Lagi</a></p>
+
+        <div class="testlagi">
+            <a href="{{ url_for('site.test_page') }}" class="btn btn-primary">Tes Lagi</a>
+            <button type="button" class="btn btn-success">Simpan PDF</button>
+        </div>
     </div>
 </div>
 
