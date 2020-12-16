@@ -39,7 +39,8 @@ def result():
     print(f"form: {form_data}")
     file = request.files
     print(f"file: {file}")
-    if form_data and file == False:
+    print(f"form_data: {bool(form_data)}\nfile: {bool(file)}")
+    if bool(form_data) and not bool(file):
         test_data = preprocess_data(form_data)
         print(f'test data = {test_data}')
         asd_model = pickle.load(open('asd_model/pkl_model.pkl', 'rb'))
