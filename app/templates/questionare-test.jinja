@@ -9,6 +9,10 @@ Questionare Test Page
     <form action="{{ url_for('site.result') }}" accept-charset="utf-8" method="post">
         <h3>Data Diri</h3>
         <div class="card">
+            <div class="nama">
+                <h2>Nama</h2>
+                <input type="text" class="form-control" placeholder="Nama" required>
+            </div>
             <div class="data-diri">
                 <div class="data">
                     {# Jenis Kelamin #}
