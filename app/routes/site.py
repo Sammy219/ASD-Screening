@@ -71,6 +71,21 @@ QUESTIONS = [
      {'id': 'q10a4', 'txt': 'Kurang dari sekali seminggu'},
      {'id': 'q10a5', 'txt': 'Tidak pernah'}],
 ]
+ETHNICITY = [
+    'Hispanic',
+    'Latino',
+    'Native indian',
+    'Lainnya',
+    'Pacifica',
+    'White european',
+    'Asian',
+    'Black',
+    'Middle eastern',
+    'Mixed',
+    'South asian',
+]
+ASSIGNER = ['Family member', 'Health care professional', 'Lainnya', 'Diri sendiri']
+AGE = ['0-12', '13-23', '24-36']
 
 
 @site.route('/')
@@ -110,10 +125,27 @@ def result():
         print(f'test data = {test_data}')
         asd_model = pickle.load(open('asd_model/pkl_model.pkl', 'rb'))
         prob = asd_model.predict_proba([test_data])
-        class_pred = np.argmax(prob)
+        class_pred = np.argmax(prob[0])
         print(f"PROBABILITY: {prob}")
+        answers = [form_data[key] for key in form_data if key.startswith('q')]
+        questions = [q[0]['txt'] for q in QUESTIONS]
+        qna = []
+        for i in range(len(answers)):
+            qna.append({
+                'q': questions[i],
+                'a': QUESTIONS[i][int(answers[i])]['txt']})
 
-        return render_template('result.jinja', class_pred=class_pred, confidence=prob[class_pred]*100)
+        bio = {
+            'name': form_data['name'],
+            'sex': 'Laki-laki' if form_data['sex'] == '1' else 'Perempuan',
+            'ethnicity': ETHNICITY[int(form_data['ethnicity'])],
+            'jaundice': 'Ya' if form_data['jaundice'] == '1' else 'Tidak',
+            'family_mem_with_asd': 'Ya' if form_data['family_mem_with_asd'] == '1' else 'Tidak',
+            'assigner': ASSIGNER[int(form_data['assigner'])],
+            'age': AGE[int(form_data['age'])]
+        }
+
+        return render_template('result.jinja', class_pred=class_pred, confidence=prob[0][class_pred]*100, bio=bio, qna=qna)
     else:
         file = request.files["image"]
         upload_image_path = f"{UPLOAD_FOLDER}/{file.filename}"
@@ -126,7 +158,6 @@ def result():
 
 def preprocess_data(data):
     # order of input: questions 1-10, sex, eth, jnd, fam, ass, 24_36, 0_12
-    test_data = []
     answers = [data[key] for key in data if key.startswith('q')]
     print(answers)
     for i in range(len(answers)):
