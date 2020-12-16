@@ -94,7 +94,7 @@ def preprocess_data(data):
 
 
 def predict_image(path_to_image):
-    model = load_model('asd_model/densenet_87.h5')
+    model = load_model('ASD_Model/densenet_87.h5')
     image = load_img(path_to_image, target_size=(224, 224))
     img_array = img_to_array(image)
     img_array = np.expand_dims(img_array, axis=0)
