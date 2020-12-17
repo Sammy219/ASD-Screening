@@ -128,7 +128,9 @@ def result():
         asd_model = pickle.load(open('asd_model/pkl_model.pkl', 'rb'))
         prob = asd_model.predict_proba([test_data])
         class_pred = np.argmax(prob[0])
+        confidence = prob[0][class_pred]*100
         print(f"PROBABILITY: {prob}")
+
         answers = [form_data[key] for key in form_data if key.startswith('q')]
         questions = [q[0]['txt'] for q in QUESTIONS]
         qna = []
@@ -147,7 +149,23 @@ def result():
             'age': AGE[int(form_data['age'])]
         }
 
-        return render_template('result.jinja', type='form', class_pred=class_pred, confidence=prob[0][class_pred]*100, bio=bio, qna=qna)
+        template_loader = jinja2.FileSystemLoader(searchpath="app/templates/")
+        template_env = jinja2.Environment(loader=template_loader)
+        template_file = 'pdf-result.jinja'
+        template = template_env.get_template(template_file)
+        out = template.render(bio=bio, qna=qna, class_pred=class_pred, confidence=confidence)
+        print(out)
+        html_file = 'app/static/html/' + bio['name'] + '.html'
+        # pdfkit.from_string(out, path_to_file)
+        with open(html_file, 'w') as f:
+            f.write(out)
+
+        path_to_file = 'app/static/pdf/' + bio['name'] + '.pdf'
+        config = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+        pdf_config = pdfkit.configuration(wkhtmltopdf=bytes(config, 'utf-8'))
+        pdfkit.from_file(html_file, path_to_file, configuration=pdf_config)
+
+        return render_template('result.jinja', type='form', class_pred=class_pred, confidence=confidence, bio=bio, qna=qna, pdf_file=path_to_file)
     else:
         file = request.files["image"]
         upload_image_path = f"{UPLOAD_FOLDER}/{file.filename}"
@@ -206,17 +224,10 @@ def predict_image(path_to_image):
     return answer, result[answer]
 
 
-@site.route('/save_pdf')
-def save_pdf(bio, qna, class_pred, confidence):
-    template_loader = jinja2.FileSystemLoader(searchpath="app/templates/")
-    template_env = jinja2.Environment(loader=template_loader)
-    template_file = 'pdf-result.jinja'
-    template = template_env.get_template(template_file)
-    out = template.render(bio=bio, qna=qna, class_pred=class_pred, confidence=confidence)
-    path_to_file = './exports' + bio['name'] + '.pdf'
-    html_file = open(path_to_file)
-    html_file.write(out)
-    html_file.close()
-
-    return send_file(path_to_file)
+@site.route('/save_pdf/<name>')
+def save_pdf(name):
+    print(f"PDF: {name}")
+    path_to_file = 'app/static/pdf/' + name + '.pdf'
+    print(path_to_file)
+    return send_file(path_to_file, as_attachment=True)
     # return render_template('image-test.jinja')
