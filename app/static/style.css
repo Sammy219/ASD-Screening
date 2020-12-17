@@ -271,3 +271,10 @@ footer {
 input[type="submit"].btn:hover {
     background: var(--blue-hover-color);
 }
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

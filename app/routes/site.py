@@ -1,11 +1,13 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, send_file
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import pickle
+import pdfkit
+import jinja2
 
 site = Blueprint('site', __name__)
-UPLOAD_FOLDER = 'app/uploads'
+UPLOAD_FOLDER = 'app/static/img'
 QUESTIONS = [
     [{'id': 'q1', 'txt': 'Apakah anak Anda melihat Anda saat Anda memanggil namanya?'},
      {'id': 'q1a1', 'txt': 'Selalu'},
@@ -145,7 +147,7 @@ def result():
             'age': AGE[int(form_data['age'])]
         }
 
-        return render_template('result.jinja', class_pred=class_pred, confidence=prob[0][class_pred]*100, bio=bio, qna=qna)
+        return render_template('result.jinja', type='form', class_pred=class_pred, confidence=prob[0][class_pred]*100, bio=bio, qna=qna)
     else:
         file = request.files["image"]
         upload_image_path = f"{UPLOAD_FOLDER}/{file.filename}"
@@ -153,7 +155,7 @@ def result():
         file.save(upload_image_path)
         class_pred, conf = predict_image(upload_image_path)
 
-        return render_template('result.jinja', class_pred=class_pred, confidence=conf*100)
+        return render_template('result.jinja', type='image', class_pred=class_pred, confidence=conf*100, filename=file.filename)
 
 
 def preprocess_data(data):
@@ -203,3 +205,18 @@ def predict_image(path_to_image):
     print(f"Answer: {answer}")
     return answer, result[answer]
 
+
+@site.route('/save_pdf')
+def save_pdf(bio, qna, class_pred, confidence):
+    template_loader = jinja2.FileSystemLoader(searchpath="app/templates/")
+    template_env = jinja2.Environment(loader=template_loader)
+    template_file = 'pdf-result.jinja'
+    template = template_env.get_template(template_file)
+    out = template.render(bio=bio, qna=qna, class_pred=class_pred, confidence=confidence)
+    path_to_file = './exports' + bio['name'] + '.pdf'
+    html_file = open(path_to_file)
+    html_file.write(out)
+    html_file.close()
+
+    return send_file(path_to_file)
+    # return render_template('image-test.jinja')
