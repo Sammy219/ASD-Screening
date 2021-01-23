@@ -5,8 +5,7 @@ Aplikasi ASD Screening memiliki fungsi utama untuk screening gejala autisme bagi
 bawah tiga tahun (batita). Aplikasi ini akan mengumpulkan pertanyaan dari kuesioner yang sudah ditetapkan, kemudian
 dilakukan prediksi dari data tersebut untuk mengetahui apakah anak yang sedang diperiksa memiliki peluang
 mengalami ASD atau tidak. Pengguna dapat melakukan pengecekan dengan cara mengupload gambar wajah untuk
-diklasifikasikan terkena gejala ASD atau tidak. Aplikasi kami juga akan menyajikan artikel edukasi dan informasi
-seputar autism spectrum disorder yang diharapkan dapat menambah wawasan pembaca.
+diklasifikasikan terkena gejala ASD atau tidak.
 
 cc: http://asdtests.com/#
 
